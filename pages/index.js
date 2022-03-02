@@ -1,5 +1,5 @@
-import Page from '../components/Page'
+import CharacterSheet from '../components/CharacterSheet';
 
 export default function Index() {
-  return <Page title="Index Page" linkTo="/other" />
+  return <CharacterSheet />
 }
