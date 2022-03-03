@@ -1,4 +1,4 @@
-import { computed, makeObservable, observable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 
 export const abilityNames = [
   'strength',
@@ -15,10 +15,7 @@ export class Ability {
   score = 10;
 
   constructor() {
-    makeObservable(this, {
-      score: observable,
-      modifier: computed
-    });
+    makeAutoObservable(this);
   }
 
   get modifier() {
