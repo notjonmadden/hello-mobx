@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { Ability, abilityNames, AbilityName } from './ability';
+import { Inventory } from './inventory';
 
 export class Character {
   name = '';
@@ -8,6 +9,8 @@ export class Character {
     ...o,
     [a]: new Ability()
   }), {} as Abilities);
+
+  inventory = new Inventory();
 
   constructor() {
     makeAutoObservable(this);

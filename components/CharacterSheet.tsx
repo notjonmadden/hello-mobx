@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import { Character } from '../stores/character';
 import { observer } from 'mobx-react-lite';
 import { Ability, abilityNames } from '../stores/ability';
+import Inventory from './inventory';
 
 export const CharacterSheet = observer(({ character }: { character: Character }) => {
   return (
@@ -24,6 +25,9 @@ export const CharacterSheet = observer(({ character }: { character: Character })
             <span>({formatModifier(character.abilities[name].modifier)})</span>
           </label>
         ))}
+      </section>
+      <section style={sectionStyle}>
+        <Inventory inventory={character.inventory} />
       </section>
     </article>
   );
